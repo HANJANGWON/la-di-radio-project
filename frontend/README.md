@@ -15,13 +15,14 @@ A modern React TypeScript application with internationalization support and Tail
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository and navigate to the frontend directory
 2. Install dependencies:
+
    ```bash
    npm install
    ```
