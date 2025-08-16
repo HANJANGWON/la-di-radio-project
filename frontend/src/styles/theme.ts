@@ -97,7 +97,7 @@ export const theme = {
       quick: "0.1s",
       regular: "0.25s",
       highlightFadeIn: "0s",
-      highlightFadeOut: "0.14s",
+      highlightFadeOut: "0.15s",
     },
   },
 } as const;
