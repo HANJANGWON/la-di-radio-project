@@ -1,0 +1,19 @@
+{
+  "welcome": "라디오 앱에 오신 것을 환영합니다",
+  "language": "언어",
+  "changeLanguage": "언어 변경",
+  "hello": "안녕하세요, {{name}}님!",
+  "navigation": {
+    "home": "홈",
+    "stations": "방송국",
+    "favorites": "즐겨찾기",
+    "settings": "설정"
+  },
+  "player": {
+    "play": "재생",
+    "pause": "일시정지",
+    "stop": "정지",
+    "volume": "볼륨",
+    "mute": "음소거"
+  }
+}

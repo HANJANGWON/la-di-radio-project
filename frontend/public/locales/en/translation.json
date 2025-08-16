@@ -1,0 +1,19 @@
+{
+  "welcome": "Welcome to our Radio App",
+  "language": "Language",
+  "changeLanguage": "Change Language",
+  "hello": "Hello, {{name}}!",
+  "navigation": {
+    "home": "Home",
+    "stations": "Stations",
+    "favorites": "Favorites",
+    "settings": "Settings"
+  },
+  "player": {
+    "play": "Play",
+    "pause": "Pause",
+    "stop": "Stop",
+    "volume": "Volume",
+    "mute": "Mute"
+  }
+}
