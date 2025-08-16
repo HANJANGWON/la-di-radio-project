@@ -1,10 +1,10 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import type { Language, LanguageOption } from '@/types';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import type { Language, LanguageOption } from "@/types";
 
 const languages: LanguageOption[] = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'ko', name: '한국어', flag: '🇰🇷' },
+  { code: "en", name: "English", flag: "🇺🇸" },
+  { code: "ko", name: "한국어", flag: "🇰🇷" },
 ];
 
 const LanguageSwitcher: React.FC = () => {
@@ -17,7 +17,7 @@ const LanguageSwitcher: React.FC = () => {
   return (
     <div className="relative inline-block">
       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-        {t('language')}
+        {t("language")}
       </label>
       <select
         value={i18n.language}

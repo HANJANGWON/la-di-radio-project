@@ -1,55 +1,97 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { theme } from '@/styles/theme';
+import { Heading, Text, Card, Button } from '@/components/ui';
 
 const Welcome: React.FC = () => {
   const { t } = useTranslation();
 
+  const containerStyle = {
+    textAlign: 'center' as const,
+    padding: '64px 24px',
+    maxWidth: theme.spacing.layout.pageMaxWidth,
+    margin: '0 auto',
+  };
+
+  const gridStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '16px',
+    maxWidth: '800px',
+    margin: '0 auto 48px auto',
+  };
+
+  const playerControlsStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '12px',
+    flexWrap: 'wrap' as const,
+  };
+
+  const navigationCards = [
+    { key: 'home', color: theme.colors.accent.blue },
+    { key: 'stations', color: theme.colors.accent.green },
+    { key: 'favorites', color: theme.colors.accent.yellow },
+    { key: 'settings', color: theme.colors.accent.indigo },
+  ];
+
   return (
-    <div className="text-center py-8">
-      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+    <div style={containerStyle}>
+      <Heading level={1} style={{ marginBottom: '16px' }}>
         {t('welcome')}
-      </h1>
-      <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+      </Heading>
+      <Text variant="secondary" size="large" style={{ marginBottom: '48px' }}>
         {t('hello', { name: 'Developer' })}
-      </p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-        <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
-          <h3 className="font-semibold text-blue-900 dark:text-blue-100">
-            {t('navigation.home')}
-          </h3>
-        </div>
-        <div className="bg-green-100 dark:bg-green-900 p-4 rounded-lg">
-          <h3 className="font-semibold text-green-900 dark:text-green-100">
-            {t('navigation.stations')}
-          </h3>
-        </div>
-        <div className="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg">
-          <h3 className="font-semibold text-yellow-900 dark:text-yellow-100">
-            {t('navigation.favorites')}
-          </h3>
-        </div>
-        <div className="bg-purple-100 dark:bg-purple-900 p-4 rounded-lg">
-          <h3 className="font-semibold text-purple-900 dark:text-purple-100">
-            {t('navigation.settings')}
-          </h3>
-        </div>
+      </Text>
+      
+      <div style={gridStyle}>
+        {navigationCards.map(({ key, color }) => (
+          <Card key={key} padding="medium">
+            <div
+              style={{
+                width: '40px',
+                height: '40px',
+                backgroundColor: `${color}20`,
+                borderRadius: theme.spacing.borderRadius.large,
+                margin: '0 auto 12px auto',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: `1px solid ${color}40`,
+              }}
+            >
+              <div
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  backgroundColor: color,
+                  borderRadius: '50%',
+                }}
+              />
+            </div>
+            <Heading level={4} style={{ color }}>
+              {t(`navigation.${key}`)}
+            </Heading>
+          </Card>
+        ))}
       </div>
-      <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-        <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+
+      <Card padding="large">
+        <Heading level={3} style={{ marginBottom: '24px' }}>
           Player Controls
-        </h3>
-        <div className="flex justify-center space-x-4">
-          <button className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors">
+        </Heading>
+        <div style={playerControlsStyle}>
+          <Button variant="primary">
             {t('player.play')}
-          </button>
-          <button className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors">
+          </Button>
+          <Button variant="secondary">
             {t('player.pause')}
-          </button>
-          <button className="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg transition-colors">
+          </Button>
+          <Button variant="ghost">
             {t('player.stop')}
-          </button>
+          </Button>
         </div>
-      </div>
+      </Card>
     </div>
   );
 };
