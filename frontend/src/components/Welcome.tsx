@@ -43,7 +43,7 @@ const Welcome: React.FC = () => {
       <Text variant="secondary" size="large" style={{ marginBottom: '48px' }}>
         {t('hello', { name: 'Developer' })}
       </Text>
-      
+
       <div style={gridStyle}>
         {navigationCards.map(({ key, color }) => (
           <Card key={key} padding="medium">
@@ -81,15 +81,9 @@ const Welcome: React.FC = () => {
           Player Controls
         </Heading>
         <div style={playerControlsStyle}>
-          <Button variant="primary">
-            {t('player.play')}
-          </Button>
-          <Button variant="secondary">
-            {t('player.pause')}
-          </Button>
-          <Button variant="ghost">
-            {t('player.stop')}
-          </Button>
+          <Button variant="primary">{t('player.play')}</Button>
+          <Button variant="secondary">{t('player.pause')}</Button>
+          <Button variant="ghost">{t('player.stop')}</Button>
         </div>
       </Card>
     </div>

@@ -13,12 +13,12 @@ export interface StatusIndicatorProps extends React.HTMLAttributes<HTMLDivElemen
   showLabel?: boolean;
 }
 
-const Badge: React.FC<BadgeProps> = ({ 
-  variant = 'default', 
+const Badge: React.FC<BadgeProps> = ({
+  variant = 'default',
   size = 'medium',
-  children, 
+  children,
   style,
-  ...props 
+  ...props
 }) => {
   const baseStyles = {
     display: 'inline-flex',
@@ -98,12 +98,12 @@ const Badge: React.FC<BadgeProps> = ({
   );
 };
 
-export const StatusIndicator: React.FC<StatusIndicatorProps> = ({ 
-  status, 
+export const StatusIndicator: React.FC<StatusIndicatorProps> = ({
+  status,
   size = 'medium',
   showLabel = false,
   style,
-  ...props 
+  ...props
 }) => {
   const statusConfig = {
     online: {

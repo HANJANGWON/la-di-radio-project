@@ -14,7 +14,7 @@ export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
 
 export const Heading: React.FC<HeadingProps> = ({ level, children, style, ...props }) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-  
+
   const headingStyles = {
     1: {
       fontSize: '64px',
@@ -61,12 +61,12 @@ export const Heading: React.FC<HeadingProps> = ({ level, children, style, ...pro
   );
 };
 
-export const Text: React.FC<TextProps> = ({ 
-  variant = 'primary', 
-  size = 'regular', 
-  children, 
-  style, 
-  ...props 
+export const Text: React.FC<TextProps> = ({
+  variant = 'primary',
+  size = 'regular',
+  children,
+  style,
+  ...props
 }) => {
   const colorMap = {
     primary: theme.colors.text.primary,
@@ -108,7 +108,7 @@ export interface CodeProps extends React.HTMLAttributes<HTMLElement> {
 
 export const Code: React.FC<CodeProps> = ({ children, inline = false, style, ...props }) => {
   const Tag = inline ? 'code' : 'pre';
-  
+
   return (
     <Tag
       style={{

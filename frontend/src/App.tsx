@@ -49,7 +49,6 @@ const App: React.FC = () => {
     transition: `color ${theme.effects.transitions.regular} ease`,
   };
 
-
   const mainStyle = {
     flex: 1,
   };
@@ -69,8 +68,8 @@ const App: React.FC = () => {
           <header style={headerStyle}>
             <div style={headerContentStyle}>
               <div style={navStyle}>
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   style={{
                     ...linkStyle,
                     fontSize: theme.typography.fontSizes.large,
@@ -80,19 +79,27 @@ const App: React.FC = () => {
                 >
                   Radio App
                 </Link>
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   style={linkStyle}
-                  onMouseEnter={(e) => (e.target as HTMLElement).style.color = theme.colors.text.primary}
-                  onMouseLeave={(e) => (e.target as HTMLElement).style.color = theme.colors.text.secondary}
+                  onMouseEnter={e =>
+                    ((e.target as HTMLElement).style.color = theme.colors.text.primary)
+                  }
+                  onMouseLeave={e =>
+                    ((e.target as HTMLElement).style.color = theme.colors.text.secondary)
+                  }
                 >
                   Home
                 </Link>
-                <Link 
-                  to="/components" 
+                <Link
+                  to="/components"
                   style={linkStyle}
-                  onMouseEnter={(e) => (e.target as HTMLElement).style.color = theme.colors.text.primary}
-                  onMouseLeave={(e) => (e.target as HTMLElement).style.color = theme.colors.text.secondary}
+                  onMouseEnter={e =>
+                    ((e.target as HTMLElement).style.color = theme.colors.text.primary)
+                  }
+                  onMouseLeave={e =>
+                    ((e.target as HTMLElement).style.color = theme.colors.text.secondary)
+                  }
                 >
                   Components
                 </Link>
@@ -100,14 +107,14 @@ const App: React.FC = () => {
               <LanguageSwitcher />
             </div>
           </header>
-          
+
           <main style={mainStyle}>
             <Routes>
               <Route path="/" element={<Welcome />} />
               <Route path="/components" element={<ComponentsPage />} />
             </Routes>
           </main>
-          
+
           <footer style={footerStyle}>
             <p>Built with React + TypeScript + Linear Design System</p>
           </footer>

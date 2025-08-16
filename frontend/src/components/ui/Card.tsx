@@ -19,12 +19,12 @@ export interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({ 
-  children, 
+const Card: React.FC<CardProps> = ({
+  children,
   variant = 'default',
   padding = 'medium',
   style,
-  ...props 
+  ...props
 }) => {
   const baseStyles = {
     background: theme.colors.background.card,

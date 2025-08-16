@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import { 
-  Button, 
-  Card, 
-  Input, 
-  Badge, 
-  Heading, 
-  Text, 
-  Code,
-  theme 
-} from '@/components/ui';
+import { Button, Card, Input, Badge, Heading, Text, Code, theme } from '@/components/ui';
 
 const ComponentsPage: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
@@ -64,9 +55,11 @@ const ComponentsPage: React.FC = () => {
           <Heading level={2} style={{ marginBottom: '24px' }}>
             Typography
           </Heading>
-          
+
           <div style={{ marginBottom: '32px' }}>
-            <Heading level={3} style={{ marginBottom: '16px' }}>Headings</Heading>
+            <Heading level={3} style={{ marginBottom: '16px' }}>
+              Headings
+            </Heading>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <Heading level={1}>Heading 1</Heading>
               <Heading level={2}>Heading 2</Heading>
@@ -76,7 +69,9 @@ const ComponentsPage: React.FC = () => {
           </div>
 
           <div style={{ marginBottom: '32px' }}>
-            <Heading level={3} style={{ marginBottom: '16px' }}>Text Variants</Heading>
+            <Heading level={3} style={{ marginBottom: '16px' }}>
+              Text Variants
+            </Heading>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <Text variant="primary">Primary text - most important content</Text>
               <Text variant="secondary">Secondary text - supporting content</Text>
@@ -86,14 +81,22 @@ const ComponentsPage: React.FC = () => {
           </div>
 
           <div>
-            <Heading level={3} style={{ marginBottom: '16px' }}>Code</Heading>
+            <Heading level={3} style={{ marginBottom: '16px' }}>
+              Code
+            </Heading>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div>
-                <Text variant="secondary" style={{ marginBottom: '8px' }}>Inline code:</Text>
-                <Text>Use the <Code inline>useState</Code> hook for state management.</Text>
+                <Text variant="secondary" style={{ marginBottom: '8px' }}>
+                  Inline code:
+                </Text>
+                <Text>
+                  Use the <Code inline>useState</Code> hook for state management.
+                </Text>
               </div>
               <div>
-                <Text variant="secondary" style={{ marginBottom: '8px' }}>Code block:</Text>
+                <Text variant="secondary" style={{ marginBottom: '8px' }}>
+                  Code block:
+                </Text>
                 <Code>{`const [count, setCount] = useState(0);
 
 return (
@@ -111,9 +114,11 @@ return (
           <Heading level={2} style={{ marginBottom: '24px' }}>
             Buttons
           </Heading>
-          
+
           <div style={{ marginBottom: '32px' }}>
-            <Heading level={3} style={{ marginBottom: '16px' }}>Variants</Heading>
+            <Heading level={3} style={{ marginBottom: '16px' }}>
+              Variants
+            </Heading>
             <div style={flexStyle}>
               <Button variant="primary">Primary Button</Button>
               <Button variant="secondary">Secondary Button</Button>
@@ -122,7 +127,9 @@ return (
           </div>
 
           <div style={{ marginBottom: '32px' }}>
-            <Heading level={3} style={{ marginBottom: '16px' }}>Sizes</Heading>
+            <Heading level={3} style={{ marginBottom: '16px' }}>
+              Sizes
+            </Heading>
             <div style={flexStyle}>
               <Button size="small">Small</Button>
               <Button size="medium">Medium</Button>
@@ -131,7 +138,9 @@ return (
           </div>
 
           <div>
-            <Heading level={3} style={{ marginBottom: '16px' }}>States</Heading>
+            <Heading level={3} style={{ marginBottom: '16px' }}>
+              States
+            </Heading>
             <div style={flexStyle}>
               <Button>Default</Button>
               <Button disabled>Disabled</Button>
@@ -144,7 +153,7 @@ return (
           <Heading level={2} style={{ marginBottom: '24px' }}>
             Cards
           </Heading>
-          
+
           <div style={gridStyle}>
             <Card>
               <Card.Header>
@@ -153,8 +162,8 @@ return (
               </Card.Header>
               <Card.Content>
                 <Text>
-                  Cards are flexible containers that can hold various types of content. 
-                  They provide a clean way to group related information.
+                  Cards are flexible containers that can hold various types of content. They provide
+                  a clean way to group related information.
                 </Text>
               </Card.Content>
               <Card.Footer>
@@ -170,8 +179,8 @@ return (
               </Card.Header>
               <Card.Content>
                 <Text>
-                  Elevated cards are perfect for highlighting important content 
-                  or creating visual hierarchy in your interface.
+                  Elevated cards are perfect for highlighting important content or creating visual
+                  hierarchy in your interface.
                 </Text>
               </Card.Content>
             </Card>
@@ -181,8 +190,8 @@ return (
                 Outlined Card
               </Heading>
               <Text>
-                Simple outlined card with large padding. Great for forms or 
-                when you need a subtle container without heavy shadows.
+                Simple outlined card with large padding. Great for forms or when you need a subtle
+                container without heavy shadows.
               </Text>
             </Card>
           </div>
@@ -193,7 +202,7 @@ return (
           <Heading level={2} style={{ marginBottom: '24px' }}>
             Form Elements
           </Heading>
-          
+
           <div style={gridStyle}>
             <Card>
               <Card.Header>
@@ -206,7 +215,7 @@ return (
                     type="email"
                     placeholder="Enter your email"
                     value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
+                    onChange={e => setInputValue(e.target.value)}
                   />
                   <Input
                     label="Password"
@@ -234,13 +243,13 @@ return (
                     label="Message"
                     placeholder="Enter your message"
                     value={textareaValue}
-                    onChange={(e) => setTextareaValue(e.target.value)}
+                    onChange={e => setTextareaValue(e.target.value)}
                     rows={3}
                   />
                   <Input.Select
                     label="Country"
                     value={selectValue}
-                    onChange={(e) => setSelectValue(e.target.value)}
+                    onChange={e => setSelectValue(e.target.value)}
                   >
                     <option value="">Select a country</option>
                     <option value="us">United States</option>
@@ -258,9 +267,11 @@ return (
           <Heading level={2} style={{ marginBottom: '24px' }}>
             Badges & Status
           </Heading>
-          
+
           <div style={{ marginBottom: '32px' }}>
-            <Heading level={3} style={{ marginBottom: '16px' }}>Badge Variants</Heading>
+            <Heading level={3} style={{ marginBottom: '16px' }}>
+              Badge Variants
+            </Heading>
             <div style={flexStyle}>
               <Badge>Default</Badge>
               <Badge variant="success">Success</Badge>
@@ -272,7 +283,9 @@ return (
           </div>
 
           <div style={{ marginBottom: '32px' }}>
-            <Heading level={3} style={{ marginBottom: '16px' }}>Badge Sizes</Heading>
+            <Heading level={3} style={{ marginBottom: '16px' }}>
+              Badge Sizes
+            </Heading>
             <div style={flexStyle}>
               <Badge size="small">Small</Badge>
               <Badge size="medium">Medium</Badge>
@@ -281,7 +294,9 @@ return (
           </div>
 
           <div>
-            <Heading level={3} style={{ marginBottom: '16px' }}>Status Indicators</Heading>
+            <Heading level={3} style={{ marginBottom: '16px' }}>
+              Status Indicators
+            </Heading>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
                 <Badge.Status status="online" showLabel />
@@ -303,7 +318,7 @@ return (
           <Heading level={2} style={{ marginBottom: '24px' }}>
             Color Palette
           </Heading>
-          
+
           <div style={gridStyle}>
             <Card>
               <Card.Header>
@@ -313,14 +328,14 @@ return (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
                   {Object.entries(theme.colors.accent).map(([name, color]) => (
                     <div key={name} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div 
-                        style={{ 
-                          width: '20px', 
-                          height: '20px', 
-                          backgroundColor: color, 
+                      <div
+                        style={{
+                          width: '20px',
+                          height: '20px',
+                          backgroundColor: color,
                           borderRadius: '4px',
-                          border: `1px solid ${theme.colors.semantic.border}`
-                        }} 
+                          border: `1px solid ${theme.colors.semantic.border}`,
+                        }}
                       />
                       <Text variant="secondary" style={{ textTransform: 'capitalize' }}>
                         {name}
@@ -339,14 +354,14 @@ return (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {Object.entries(theme.colors.background).map(([name, color]) => (
                     <div key={name} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div 
-                        style={{ 
-                          width: '20px', 
-                          height: '20px', 
-                          backgroundColor: color, 
+                      <div
+                        style={{
+                          width: '20px',
+                          height: '20px',
+                          backgroundColor: color,
                           borderRadius: '4px',
-                          border: `1px solid ${theme.colors.semantic.border}`
-                        }} 
+                          border: `1px solid ${theme.colors.semantic.border}`,
+                        }}
                       />
                       <Text variant="secondary" style={{ textTransform: 'capitalize' }}>
                         {name}

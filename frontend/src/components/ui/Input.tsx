@@ -22,14 +22,14 @@ export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElemen
   children: React.ReactNode;
 }
 
-const Input: React.FC<InputProps> = ({ 
-  label, 
-  error, 
-  hint, 
-  leftIcon, 
-  rightIcon, 
+const Input: React.FC<InputProps> = ({
+  label,
+  error,
+  hint,
+  leftIcon,
+  rightIcon,
   style,
-  ...props 
+  ...props
 }) => {
   const inputStyles = {
     fontFamily: theme.typography.fontFamilies.primary,
@@ -45,7 +45,6 @@ const Input: React.FC<InputProps> = ({
     outline: 'none',
     transition: `all ${theme.effects.transitions.regular} ease`,
   };
-
 
   return (
     <div style={{ width: '100%' }}>
@@ -63,7 +62,7 @@ const Input: React.FC<InputProps> = ({
           {label}
         </label>
       )}
-      
+
       <div style={{ position: 'relative' }}>
         {leftIcon && (
           <div
@@ -79,7 +78,7 @@ const Input: React.FC<InputProps> = ({
             {leftIcon}
           </div>
         )}
-        
+
         <input
           style={{
             ...inputStyles,
@@ -87,17 +86,19 @@ const Input: React.FC<InputProps> = ({
             paddingRight: rightIcon ? '40px' : '16px',
             ...style,
           }}
-          onFocus={(e) => {
+          onFocus={e => {
             e.target.style.borderColor = theme.colors.semantic.focus;
             e.target.style.boxShadow = `0 0 0 2px ${theme.colors.semantic.focus}20`;
           }}
-          onBlur={(e) => {
-            e.target.style.borderColor = error ? theme.colors.accent.red : theme.colors.semantic.border;
+          onBlur={e => {
+            e.target.style.borderColor = error
+              ? theme.colors.accent.red
+              : theme.colors.semantic.border;
             e.target.style.boxShadow = 'none';
           }}
           {...props}
         />
-        
+
         {rightIcon && (
           <div
             style={{
@@ -113,7 +114,7 @@ const Input: React.FC<InputProps> = ({
           </div>
         )}
       </div>
-      
+
       {(error || hint) && (
         <p
           style={{
@@ -131,13 +132,7 @@ const Input: React.FC<InputProps> = ({
   );
 };
 
-export const Textarea: React.FC<TextareaProps> = ({ 
-  label, 
-  error, 
-  hint, 
-  style,
-  ...props 
-}) => {
+export const Textarea: React.FC<TextareaProps> = ({ label, error, hint, style, ...props }) => {
   const textareaStyles = {
     fontFamily: theme.typography.fontFamilies.primary,
     fontSize: theme.typography.fontSizes.regular,
@@ -170,23 +165,25 @@ export const Textarea: React.FC<TextareaProps> = ({
           {label}
         </label>
       )}
-      
+
       <textarea
         style={{
           ...textareaStyles,
           ...style,
         }}
-        onFocus={(e) => {
+        onFocus={e => {
           e.target.style.borderColor = theme.colors.semantic.focus;
           e.target.style.boxShadow = `0 0 0 2px ${theme.colors.semantic.focus}20`;
         }}
-        onBlur={(e) => {
-          e.target.style.borderColor = error ? theme.colors.accent.red : theme.colors.semantic.border;
+        onBlur={e => {
+          e.target.style.borderColor = error
+            ? theme.colors.accent.red
+            : theme.colors.semantic.border;
           e.target.style.boxShadow = 'none';
         }}
         {...props}
       />
-      
+
       {(error || hint) && (
         <p
           style={{
@@ -204,13 +201,13 @@ export const Textarea: React.FC<TextareaProps> = ({
   );
 };
 
-export const Select: React.FC<SelectProps> = ({ 
-  label, 
-  error, 
-  hint, 
+export const Select: React.FC<SelectProps> = ({
+  label,
+  error,
+  hint,
   children,
   style,
-  ...props 
+  ...props
 }) => {
   const selectStyles = {
     fontFamily: theme.typography.fontFamilies.primary,
@@ -244,25 +241,27 @@ export const Select: React.FC<SelectProps> = ({
           {label}
         </label>
       )}
-      
+
       <select
         style={{
           ...selectStyles,
           ...style,
         }}
-        onFocus={(e) => {
+        onFocus={e => {
           e.target.style.borderColor = theme.colors.semantic.focus;
           e.target.style.boxShadow = `0 0 0 2px ${theme.colors.semantic.focus}20`;
         }}
-        onBlur={(e) => {
-          e.target.style.borderColor = error ? theme.colors.accent.red : theme.colors.semantic.border;
+        onBlur={e => {
+          e.target.style.borderColor = error
+            ? theme.colors.accent.red
+            : theme.colors.semantic.border;
           e.target.style.boxShadow = 'none';
         }}
         {...props}
       >
         {children}
       </select>
-      
+
       {(error || hint) && (
         <p
           style={{
